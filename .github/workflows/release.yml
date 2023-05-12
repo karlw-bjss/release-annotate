@@ -48,7 +48,7 @@ jobs:
           git status
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Tag the release
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          git tag -a "${{ github.event.inputs.version }}" -m "${{ github.event.inputs.message }}"
+          git push origin --tags
