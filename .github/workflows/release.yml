@@ -35,7 +35,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Checkout commit if provided
         run: |
-          COMMIT="${{ github.events.inputs.commit }}"
+          COMMIT="${{ github.event.inputs.commit }}"
           if [[ -z "$COMMIT" ]]; then
             echo "No commit provided, using head of main branch"
           else
